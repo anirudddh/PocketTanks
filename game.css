@@ -1,0 +1,499 @@
+html,body{
+    display: grid;
+    box-sizing: border-box;
+}
+canvas {
+    /*border:1px solid #d3d3d3;*/
+    background-color: #f0f8ff;
+}
+button{
+    cursor: pointer;
+}
+.game-starter{
+    display: none;
+    justify-items: center;
+    align-content: center;
+    background-color: #243665;
+    width: 1000px;
+    justify-self: center;
+    height: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 42% 58%;
+}
+.game_start_head{
+    grid-row-start: 1;
+    grid-column-start: 2;
+    display: grid;
+    justify-items: center;
+    align-content: end;
+    font-family: 'Concert One', cursive;
+    font-size: 50px;
+    color: #8BD8BD;
+}
+.game_start_canon{
+    text-align: left;
+    grid-row-start: 1;
+    grid-column-start: 3;
+    display: grid;
+    justify-content: start;
+    align-items: end;
+    width: 100%;
+    margin-top: 50px;
+}
+.game_start_tank{
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    justify-items: end;
+    align-items: end;
+    padding-bottom: 45px;
+}
+.game_start_option{
+    grid-row-start: 2;
+    grid-column-start: 2;
+    justify-items: center;
+    align-items: start;
+    display: grid;
+    padding-top: 50px;
+}
+.start_buttons{
+    width: 125px;
+    height: 35px;
+    border: none;
+    background-color: #dedede;
+    margin: 25px;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    display: block;
+}
+.close{
+    grid-column-start: 2;
+    justify-self: end;
+    width: 33px !important;
+    height: 33px !important;
+    color: #EE0E0E;
+    background-color: #dedede;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+.fill_player_details{
+    display: none;
+    justify-items: center;
+    align-content: center;
+    background-color: #243665;
+    width: 920px;
+    justify-self: center;
+    height: 520px;
+    grid-template-rows: 5% 95%;
+    grid-template-columns: 50% 50%;
+    padding: 40px;
+}
+.player_details_get{
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    width: 100%;
+    justify-items: center;
+}
+.player_det_head{
+    font-family: 'Concert One', cursive;
+    font-size: 30px;
+    color: #8BD8BD;
+    align-self: center;
+}
+.input_container{
+    align-self: center;
+    width: 250px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.player_det_label{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #8BD8BD;
+    margin-right: 5px;
+    height: 20px;
+}
+.player_det_name_in{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    padding-left: 5px;
+    height: 20px;
+    width: 170px;
+    background-color: #dedede;
+}
+.all_radio_container{
+    width: 200px;
+    height: 100px;
+    align-self: center;
+    display: grid;
+    justify-items: center;
+}
+.tank_color_text{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #8BD8BD;
+    width: 170px;
+    height: 25px;
+}
+.radio_container {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    margin-right:10px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .radio_container .radio_input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .radio_container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .radio_container .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: black;
+}
+.red{
+    background-color:#D92929;
+    border: 1.5px solid black;
+}
+.yellow{
+    background-color: #D9BD29;
+    border: 1.5px solid black;
+}
+.blue{
+    background-color: #094363;
+    border: 1.5px solid black;
+}
+.green{
+    background-color: #225821;
+    border: 1.5px solid black;
+}
+.next_weapon{
+    grid-row-start: 4;
+    justify-self: end;
+    margin-right: 60px;
+}
+.button_next{
+    width: 100px !important;
+    height: 40px !important;
+    background-color: #dedede;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+.weapon_select{
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    background-color: #243665;
+    width: 970px;
+    justify-self: center;
+    height: 570px;
+    grid-template-rows: 5% 95%;
+    padding: 15px;
+}
+.player1_weapons{
+    grid-column-start: 1;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    padding: 15px;
+    width: 100%;
+    justify-items: center;
+}
+.weapon_name{
+    margin: 10px 0 !important;
+}
+.weapon_list{
+    grid-column-start: 2;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 20% 80%;
+    width: 100%;
+}
+.weapon_list_head{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.current_selector{
+    color: #8BD8BD;
+    font-family:'Concert One', cursive ;
+    font-size: 18px;
+}
+.weapon_name_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.right{
+    grid-column-start: 3;
+}
+.player2_weapons{
+    grid-column-start: 3;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    padding: 15px;
+    width: 100%;
+    justify-items: center;
+}
+.weapon_list_container{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.weapon_sel_container{
+    padding: 0;
+    border: 1px solid black;
+    height: 30px;
+    width: 120px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 75% 25%;
+    background-color: #dedede;
+    margin: 5px;
+}
+.weapon_selector{
+    width: 100%;
+    background-color: #dedede;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+}
+.weapon_image_container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 29px;
+    height: 32px;
+    border-left: 1px solid black;
+    background-color: #dedede;
+}
+.weapon_image{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+.game-wrapper{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    background-color: #f5fffa;
+    width: 1000px;
+    justify-self: center;
+    height: 600px;
+    display: none;
+}
+.canvas-wrapper{
+    height: 400px;;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-column-start: span 2;
+}
+.player_details{
+    width: 100%;
+    text-align: center;
+}
+.fire-button{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border:none;
+    background-color: #F24343;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    border-style: none;
+}
+.bottom_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom_container > div{
+    margin: 10px;
+}
+.img_weapon_container{
+    border: 1px solid black;
+    display: flex;
+    height: 30px;
+}
+.select_btn{
+    border-style: none;
+    background-color: #fff;
+}
+.show_weapon_container{
+    border-left: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.show_weapon{
+    width: 20px;
+    height: 20px;
+}
+.range {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    background: #fff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: red;
+    cursor: pointer;
+  }
+  
+  .range::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: red;
+    cursor: pointer;
+  }
+
+  .overlay-container{
+      width: 100%;
+      height: 600px;
+      z-index: 5;
+      justify-items: center;
+      align-content: center;
+      position: fixed;
+      display: grid;
+      margin: 0;
+      padding: 0;
+      display: none;
+  }
+  .overlay{
+    width: 1000px;
+    height: 600px;
+    z-index: 100;
+    justify-items: center;
+    align-content: center;
+    justify-self: center;
+    display: grid;
+    color: #000;
+}
+
+.super_button{
+    z-index: 15;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.center{
+    text-align: center;
+}
+.btn{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background-color: #dedede;
+    padding: 8px 12px;
+}
+.instructions{
+    display: none;
+    justify-items: center;
+    align-content: center;
+    background-color: #243665;
+    width: 920px;
+    justify-self: center;
+    height: 520px;
+    grid-template-rows: 5% 20% 75% ;
+    grid-template-columns: 50% 50%;
+    padding: 40px;
+}
+.instructions_head{
+    grid-column-start: span 2;
+    color: white;
+    font-family: 'Concert One', cursive;
+    font-size: 64px;
+}
+.instructions_body{
+    grid-column-start: span 2;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+}
+
+.loading{
+    height: 600px;
+    width: 1000px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #243665;
+    font-family: 'Concert One', cursive;
+    font-size: 90px;
+    color: #8BD8BD;
+    justify-self: center;
+}
+
+.footer {
+  height: 50px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: light-grey;
+  flex-direction: column;
+}
+
+.footer a {
+  color: light-grey;
+  }
